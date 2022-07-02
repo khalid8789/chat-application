@@ -1,6 +1,9 @@
 import { useState } from "react"
 import axios from 'axios'
 
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>  
+
 const LoginForm = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
@@ -10,7 +13,7 @@ const LoginForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
 
-        const authObject ={'Project-ID': "f62c65e3-a217-4cd4-9eea-1934c4b1efce", 'User-Name' : username, 'User-Secret' : password}
+        const authObject ={'Project-ID': "f62c65e3-a217-4cd4-9eea-1934c4b1efce", 'User-Name' : username, 'User-Secret' : password, 'private-key' : "8862256e-8720-49f1-8ba9-e26062e31b0d"}
 
         try {
            await axios.get('https://api.chatengine.io/chats', {headers: authObject})
